@@ -1,0 +1,290 @@
+{
+    
+    "dashboard": "Dashboard",
+    "roles": "Roles",
+    "users": "Users",
+    "settings": "Settings",
+    "profile": "Profile",
+    "logout": "Logout",
+    "add": "Add",
+
+   
+    
+    
+    
+    "name": "Name",
+    "email": "Email",
+    "title": "Title",
+    "first name": "First Name",
+    "middle name": "Middle Name",
+    "last name": "Last Name",
+    "role name": "Role Name",
+    "national id": "National ID",
+    "amount": "Amount",
+
+    "gender": "Gender",
+    "date of birth": "Date of Birth",
+    "mobile": "Mobile",
+    "employee id": "Employee ID",
+    "tin": "TIN",
+    "details": "Details",
+    "start date":"Start Date",
+    "end date":"End Date",
+   
+
+    "identity": "Identity",
+    "male":"Male",
+    "female":"Female",
+    "initials":"Initials",
+
+
+    
+    "password": "Password",
+    "confirm password": "Confirm Password",
+    "description": "Description",
+    "account number": "Account Number",
+    "salary amount": "Salary Amount",
+    "full name": "Full Name",
+
+    "number": "Number",
+
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "ratio": "Ratio",
+    "offset": "Offset",
+    
+
+
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    
+    "save": "Save",
+    "saved": "Saved",
+
+
+    "reset": "Reset",
+    "filter": "Filter",
+    "search": "Search...",
+    "trashed:": "Trashed:",
+    "with trashed": "With Trashed",
+    "only trashed": "Only Trashed",
+    "created": "Created",
+    "updated": "Updated",
+    "created by": "Created By",
+    "updated by": "Updated By",
+
+
+
+  
+    "allowance types": "Allowance Types",
+    "allowance type": "Allowance Type",
+    "allowances": "Allowances",
+    "allowance": "Allowance",
+    "age": "Age",
+
+    "centers": "Centers",
+
+    "payroll": "Payroll",
+    
+    
+
+    "banks": "Banks",
+    "bank": "Bank",   
+    "center": "Center",     
+    "companies": "Companies",
+    "company": "Company",
+    "countries": "Countries",
+    "country": "Country",
+    "deduction types": "Deduction Types",
+    "deduction type": "Deduction Type",
+    "deductions": "Deductions",
+    "deduction": "Deduction",
+    "departments": "Departments",
+    "department": "Department",
+    "designations": "Designations",
+    "designation": "Designation",
+    "employees": "Employees",
+    "employee": "Employee",
+    "employment types": "Employment Types",
+    "employment type": "Employment Type",
+    "expected retired date": "Expected Retired Date",
+    "kin types": "Kin Types",
+    "kin type": "Kin Type",
+    "kin": "Kin",
+    "kins": "Kins",
+    "next of kins": "Next of Kins",
+    "next of kin": "Next of Kin",
+    "levels": "Levels",
+    "level": "Level",
+    "organizations": "Organizations",
+    "organization": "Organization",
+    "payes": "Payes",
+    "paye": "Paye",
+    "pay center": "Pay Center",
+    "structure level": "Structure Level",
+    "scales": "Scales",
+    "scale": "Scale",
+    "statutory types": "Statutory Types",
+    "statutory type": "Statutory Type",
+    "statutories": "Statutories",
+    "statutory": "Statutory",
+    "salary types": "Salary Types",
+    "salary type": "Salary Type",
+    "salary circle": "Salary Circle",
+    "salary scale": "Salary Scale",
+    "salary Scales": "Salary Scales",
+
+    "salaries": "Salaries",
+    "salary": "Salary",
+
+    "status": "Status",
+
+   
+
+    "payroll groups": "Payroll Groups",
+    "payroll group": "Payroll Group",
+
+    "pay bases": "Pay Bases",
+    "pay base": "Pay Base",
+
+    
+    "salary bases": "Salary Bases",
+    "salary base": "Salary Base",
+
+  
+    "role": "Role",
+
+    "user": "User",
+
+    "pay": "Pay",
+    "pays": "Pays",
+    "balance": "Balance",
+    "posted": "Posted",
+    "payroll summary": "Payroll Summary",
+    "net": "Net",
+    "total": "Total",
+    "gross": "Gross",
+    "net by bank": "Net by Bank",
+    "paid": "Paid",
+    "earning": "Earning",
+    "reports": "Reports",
+    "current pay": "Current Pay",
+    "pays for": "Pays For",
+    "net pays for": "Net Pays For",
+
+    "monthly pay": "Monthly Pay",
+    "previous": "Previous",
+    "payroll for": "Payroll For",
+    "report": "Report",
+    "help": "Help",
+
+    "sn": "SN",
+    "current": "Current",
+    "taxable pay": "Taxable Pay",
+    "print": "Print",
+
+    "basic salary": "Basic Salary",
+    "month": "Month",
+    "run date": "Run Date",
+
+    "trial": "Trial",
+    "logo": "Logo",
+    "website": "Website",
+    "vrn": "VRN",
+    "regno": "Reg No",
+    "slogan": "Slogan",
+    "mission": "Mission",
+    "vision": "Vision",
+
+
+    "s/no.": "#.",
+    "name of employee": "Name of Employee",
+    "payroll no": "Payroll No.",
+    "postal address": "Postal Address",
+    "postal city": "Postal City",
+    "basic pay": "Basic Pay",
+    "housing": "Housing",
+    "allowance and benefit": "Allowance and Benefit",
+    "gross pay": "Gross Pay",
+    "pay details for": "Pay Details For",
+    "pay details": "Pay Details",
+    "net balance": "Net Balance",
+    "net list by bank": "Net List by Bank",
+    "net by bank for ": "Net By Bank For ",
+    "account": "Account",
+    "create payment for ": "Create Payment For",
+    "create payment": "Create Payment",
+
+    "period": "Period",
+    "date taken": "Date taken",
+    "interest": "Interest",
+    "yes": "Yes",
+    "no": "No",
+
+    "mandatory": "Mandatory",
+    "employer": "Employer",
+    "before paye": "Before Paye",
+    "due date": "Due date",
+    "employee ratio": "Employee Ratio",
+    "employer ratio": "Employer Ratio",
+    
+
+    "remuneration": "Remuneration",
+    "remunerations": "Remunerations",
+    "remuneration type": "Remuneration Type",
+    "remuneration types": "Remuneration Types",
+    "previous statutories": "Previous Statutories",
+    "admin": "Admin",
+    "administrator": "Administrator",
+    "previous contribution": "Previous Contribution",
+    "previous contributions": "Previous Contributions",
+    
+
+
+
+    "you do not have permission": "You do not have permission.",
+
+  
+    "taxable amount": "Taxable Amount",
+    "tax due": "Tax Due",
+
+    "net pays for ": "Net Pays For ",
+    "marital status": "Marital Status",
+    "pay allowance": "Pay Allowance",
+    "pay allowances": "Pay Allowances",
+    "pay deduction": "Pay Deduction",
+    "pay deductions": "Pay Deductions",
+
+    "pay statutory": "Pay Statutory",
+    "pay statutories": "Pay Statutories",
+
+    "pay remuneration": "Pay Remuneration",
+    "pay remunerations": "Pay Remunerations",
+    "type": "Type",
+    "pay number": "Pay Number",
+    "year": "Year",
+    "slip": "Slip",
+
+
+    "do you want to post?": "Do you want to post?",
+   
+
+    "item created succssfully": "Item created successfully",
+
+    
+
+    "item can not be created" : "Item can not be created",
+
+    "item updated successfully": "Item updated successfully",
+
+    "item can not be updated" : "Item can not be updated",
+
+    "item deleted successfully": "Item deleted successfully",
+
+    "item could not be deleted" : "Item could not be deleted, other items use it",
+
+    "page can not be displayed": "Page can1 not be displayed, something went wrong."
+ 
+
+}
