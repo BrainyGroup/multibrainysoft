@@ -69,8 +69,9 @@ use Inertia\Inertia;
 
 Route::middleware([
     'web',
-    InitializeTenancyByDomain::class,
     PreventAccessFromCentralDomains::class,
+    InitializeTenancyByDomain::class,
+    
 ])->group(function () {
     Route::get('/', function () {
         return Inertia::render('Welcome', [
