@@ -26,7 +26,7 @@ const form = useForm({
 // };
 
 const updateTenant = () => {
-    form.post(route('tenant.update', props.tenant.id), {
+    form.post(route('tenants.update', props.tenant.id), {
         preserveScroll: true,
         onSuccess: () => form.reset(),
         onError: () => {

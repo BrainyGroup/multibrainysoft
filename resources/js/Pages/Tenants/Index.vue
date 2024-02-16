@@ -33,7 +33,8 @@ const props = defineProps({
 
         <div class="mx-4">
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                           <Head :title="`${t('tenants')}`" />
+                           <!-- <Head :title="`${t('tenants')}`" /> -->
+                          
                             <!-- <h1 class="mb-8 text-3xl font-bold">Tenants</h1> -->
                            <div class="flex items-center justify-between mb-6">
                                 <!-- <search-filter v-model="form.search" class="mr-4 w-full max-w-md" @reset="reset">
@@ -58,7 +59,11 @@ const props = defineProps({
                                     <th class="pb-4 pt-6 px-6">Name</th>
                                     <th class="pb-4 pt-6 px-6">Database</th>
                                     <th class="pb-4 pt-6 px-6">Domain</th>
-                                    <th class="pb-4 pt-6 px-6">Admin Email</th>
+                                    <th class="pb-4 pt-6 px-6">First Name</th>
+                                    <th class="pb-4 pt-6 px-6">Last Name</th>
+                                    <th class="pb-4 pt-6 px-6">Email</th>
+                                    <th class="pb-4 pt-6 px-6">Mobile</th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -80,6 +85,34 @@ const props = defineProps({
                                     <td class="border-t">
                                         <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/tenants/${tenant.id}/edit`">
                                             {{ tenant.domain }}
+                                            <icon v-if="tenant.deleted_at" name="trash" class="flex-shrink-0 ml-2 w-3 h-3 fill-gray-400" />
+                                        </Link>
+                                    </td>
+
+                                    <td class="border-t">
+                                        <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/tenants/${tenant.id}/edit`">
+                                            {{ tenant.first_name }}
+                                            <icon v-if="tenant.deleted_at" name="trash" class="flex-shrink-0 ml-2 w-3 h-3 fill-gray-400" />
+                                        </Link>
+                                    </td>
+
+                                    <td class="border-t">
+                                        <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/tenants/${tenant.id}/edit`">
+                                            {{ tenant.last_name }}
+                                            <icon v-if="tenant.deleted_at" name="trash" class="flex-shrink-0 ml-2 w-3 h-3 fill-gray-400" />
+                                        </Link>
+                                    </td>
+
+                                    <td class="border-t">
+                                        <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/tenants/${tenant.id}/edit`">
+                                            {{ tenant.email }}
+                                            <icon v-if="tenant.deleted_at" name="trash" class="flex-shrink-0 ml-2 w-3 h-3 fill-gray-400" />
+                                        </Link>
+                                    </td>
+
+                                    <td class="border-t">
+                                        <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/tenants/${tenant.id}/edit`">
+                                            {{ tenant.mobile }}
                                             <icon v-if="tenant.deleted_at" name="trash" class="flex-shrink-0 ml-2 w-3 h-3 fill-gray-400" />
                                         </Link>
                                     </td>

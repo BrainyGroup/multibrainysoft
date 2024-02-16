@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Tenant;
+use App\Models\TenantDetail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -19,7 +20,7 @@ class TenantWelcomeEmailJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(public string $email, public Tenant $tenant)
+    public function __construct(public string $email, public Tenant $tenant, public TenantDetail $tenant_detail)
     {
         //
     }
@@ -30,6 +31,6 @@ class TenantWelcomeEmailJob implements ShouldQueue
     public function handle(): void
     {
 
-             Mail::to($this->email)->send(new TenantWelcome($this->tenant));
+             Mail::to($this->email)->send(new TenantWelcome($this->tenant, $this->tenant_detail));
     }
 }

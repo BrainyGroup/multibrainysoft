@@ -70,7 +70,7 @@ use Inertia\Inertia;
 
 Route::middleware([
     'web',
-    InitializeTenancyByDomainOrSubdomain::class,
+    InitializeTenancyByDomain::class,
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
     Route::get('/', function () {

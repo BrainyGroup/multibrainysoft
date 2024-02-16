@@ -85,6 +85,7 @@ class UserController extends Controller
                     'create_employee' => $request->user()->can('create', Employee::class)
                 ],
                 'users' =>User::query()
+                
                     ->orderByName()
                     ->filter(Req::only('search', 'trashed'))
                     ->paginate(10)

@@ -12,6 +12,7 @@ use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Attachment;
 
 use App\Models\Tenant;
+use App\Models\TenantDetail;
 
 class TenantWelcome extends Mailable
 {
@@ -20,7 +21,7 @@ class TenantWelcome extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public Tenant $tenant)
+    public function __construct(public Tenant $tenant, public TenantDetail $tenant_detail)
     {
         //
     }
@@ -51,7 +52,8 @@ class TenantWelcome extends Mailable
         return new Content(
             markdown: 'emails.tenants.welcome',
             with: [
-                'tenant' => $this->tenant
+                'tenant' => $this->tenant,
+                'tenant_detail' => $this->tenant_detail
             ]
         );
     }

@@ -62,7 +62,7 @@ class UserMainController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
 
         try{   
@@ -76,6 +76,10 @@ class UserMainController extends Controller
             return Inertia::render('MainUsers/Index',  [
                 'translations' => $translations,
                 'filters' => Req::all('search', 'trashed'),
+                'can' => [
+                    'create_user' => $request->user()->can('create', User::class),
+                    'create_employee' => $request->user()->can('create', Employee::class)
+                ],
                 'users' =>User::query()
                     ->orderByName()
                     ->filter(Req::only('search', 'trashed'))

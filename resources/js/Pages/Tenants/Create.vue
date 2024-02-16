@@ -7,8 +7,13 @@ import { Head } from '@inertiajs/vue3';
 
 const props = defineProps({ 
   translations:Object,
-  translations: Object,
+ 
 });
+
+//Translation
+const t = (key, params) => {
+    return props.translations[key] || key;
+}
 </script>
 
 <template>
@@ -22,7 +27,8 @@ const props = defineProps({
         <div>
             <Head :title="`${t('create')} ${t('tenant')}`" />
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                <div>
+                
+                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                     <CreateTenantForm  />
 
                     <SectionBorder />

@@ -6,9 +6,11 @@ use App\Models\Tenant;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
+use App\Models\TenantDetail;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Jobs\TenantWelcomeEmailJob;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 use Inertia\Response;
@@ -30,12 +32,17 @@ class TenantController extends Controller
         
         $tenants = Tenant::query()
         
-        ->join('domains', 'domains.tenant_id', 'tenants.id')       
+        ->join('domains', 'domains.tenant_id', 'tenants.id') 
+        ->join('tenant_details', 'tenant_details.tenant_id', 'tenants.id')      
 
         ->select(
             'tenants.*',
             'domains.id as domain_id',
-            'domains.domain'
+            'domains.domain',
+            'tenant_details.email',
+            'tenant_details.mobile',
+            'tenant_details.first_name',
+            'tenant_details.last_name'
             )
 
         ->get();
@@ -64,23 +71,54 @@ class TenantController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {      
+    {    
+        
+        // dd($request);
 
       
-        $this->validate($request, [
-            'id' => 'required|unique:tenants,id' ,
-               
-        ]);
+        // $this->validate($request, [
+        //     'id' => 'required|unique:tenants,id' ,
+        //     'email' => 'required|email',
+        //     'name' => 'required',
+        //     'mobile' => 'required',                         
+        // ]);
 
-        $id = strtolower($request->input('id'));   
+        $id = strtolower($request->input('id'));
+        
+               // validate email address in ternants
+          
+
+        $app_domain = env('APP_DOMAIN', 'brainysoft.co.tz');
+
+
+       $email = $request->input('email');
+
+       $first_name = $request->input('first_name');
+
+       $mobile = $request->input('mobile');
+
+       $company_name = $request->input('company_name');
 
 
         $tenant = Tenant::create(['id' => $id ]);
 
-     
+        $tenant->domains()->create(['domain' => $id . '.' . $app_domain]); 
 
-     
-        $tenant->domains()->create(['domain' => $id .'.localhost']);       
+        $tenant_detail = TenantDetail::create([
+            'tenant_id' => $id,
+            'uuid' => (string) Str::uuid(),
+            'domain' => $id .'.'. $app_domain,
+            'name' => $company_name,
+            'description' => $request->input('description'),
+            'email' => $email,
+            'mobile' => $mobile,
+            'database' => config('tenancy.database.prefix') . $id,
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+        ]);
+        
+        
+
 
         \Artisan::call('tenants:migrate', [
             '--tenants' => [$tenant['id']]
@@ -91,15 +129,10 @@ class TenantController extends Controller
         ]);
 
 
-        // validate email address in ternants
-
-
-       $email = $request->input('email');
-
-       $company_name = $request->input('company_name');
+ 
        
 
-        $tenant->run(function () use ($email, $company_name, $id) {
+        $tenant->run(function () use ($email, $company_name, $first_name, $id) {
 
                        
             $company = Company::create([
@@ -116,18 +149,20 @@ class TenantController extends Controller
                 'password' => bcrypt('admin')
             ]);
 
-            $role = Role::create(['name' => 'Admin']);
+            // $role = Role::create(['name' => 'Admin']);
+
+            $role = Role::where('name', 'Admin')->first();
    
-            $permissions = Permission::pluck('id','id')->all();
+            // $permissions = Permission::pluck('id','id')->all();
       
-            $role->syncPermissions($permissions);
+            // $role->syncPermissions($permissions);
        
             $user->assignRole([$role->id]);
 
             
         });   
 
-        dispatch(new TenantWelcomeEmailJob($email, $tenant))->onConnection('central');
+        dispatch(new TenantWelcomeEmailJob($email, $tenant, $tenant_detail))->onConnection('central');
 
 
 

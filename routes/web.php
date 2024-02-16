@@ -3,8 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleMainController;
+// use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserMainController;
 use App\Http\Controllers\TenantController;
 use Inertia\Inertia;
@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resources([
-        'roles' => RoleController::class,
+        'roles' => RoleMainController::class,
         'tenants' => TenantController::class,
         'users' => UserMainController::class,
     ]);

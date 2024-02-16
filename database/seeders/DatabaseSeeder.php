@@ -20,32 +20,16 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            PermissionTableSeeder::class,               
+            PermissionTableSeeder::class,      
             
             
             UsersTableSeeder::class,
                  
             CountriesTableSeeder::class,
-            Salary_basesTableSeeder::class,
-            PayesTableSeeder::class,
-            Statutory_typesTableSeeder::class,
-            OrganizationsTableSeeder::class,
-            StatutoriesTableSeeder::class,
-            BanksTableSeeder::class,
-            CentersTableSeeder::class,
-            EmployeesTableSeeder::class,
-            ScalesTableSeeder::class,
-            SalariesTableSeeder::class,
            
-            Deduction_typesTableSeeder::class,
-            Allowance_typesTableSeeder::class,
-            Remuneration_typesTableSeeder::class,
-            DeductionsTableSeeder::class,           
-            AllowancesTableSeeder::class,
-
             CompaniesTableSeeder::class,
             CreateAdminUserSeeder::class, 
-            BanksTableSeeder::class,    
+            
         ]);
     
     }

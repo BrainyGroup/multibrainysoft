@@ -1,5 +1,5 @@
 <x-mail::message>
-Dear [client name],
+Dear {{ $tenant_detail->first_name }},
 
 # Welcome
 
@@ -16,7 +16,7 @@ Take some time to [describe the next steps that customer can take on their journ
 
 
 <div>
-    Price: {{ $tenant }}
+    Price: {{ $tenant_detail }}
 </div>
 
 [List resources that can help customers make the best use of their subscription/ membership].
@@ -36,6 +36,10 @@ This is the panel content.
 
 <x-mail::button :url="''">
 Button Text
+</x-mail::button>
+
+<x-mail::button :url="$tenant_detail->domain">
+Go to your site
 </x-mail::button>
 
 Regards,

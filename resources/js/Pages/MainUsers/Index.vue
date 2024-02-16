@@ -34,6 +34,11 @@ const form = ref({
     trashed: props.filters.trashed,
 })
 
+const deleteUser = (id) => {
+    router.delete(route("users.destroy", id));   
+
+};
+
 let timerId = null
 
 watch(form, function (newForm) {

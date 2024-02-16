@@ -19,7 +19,13 @@ const props = defineProps({
 const form = useForm({
     id: '',
     email:'', 
-    company_name:'',  
+    company_name:'', 
+
+    description: '',
+    mobile:'', 
+    database:'', 
+    first_name:'', 
+    last_name:'',  
 });
 
 const createTenant = () => {
@@ -72,8 +78,72 @@ const createTenant = () => {
                     autocomplete="company_name"
                 />
 
-                <InputError :message="form.errors.id" class="mt-2" />
+                <InputError :message="form.errors.company_name" class="mt-2" />
             </div>
+
+            <div>
+                <InputLabel for="description" value="Description" />
+
+                <TextInput
+                    id="description"
+                    ref="descriptionInput"
+                    v-model="form.description"
+                    type="text"
+                    class="mt-1 block w-full"
+                    autocomplete="description"
+                />
+
+                <InputError :message="form.errors.description" class="mt-2" />
+            </div>
+
+            <div>
+                <InputLabel for="first_name" value="First Name" />
+
+                <TextInput
+                    id="first_name"
+                    ref="first_nameInput"
+                    v-model="form.first_name"
+                    type="text"
+                    class="mt-1 block w-full"
+                    autocomplete="first_name"
+                />
+
+                <InputError :message="form.errors.first_name" class="mt-2" />
+            </div>
+
+            <div>
+                <InputLabel for="last_name" value="Last Name" />
+
+                <TextInput
+                    id="last_name"
+                    ref="last_nameInput"
+                    v-model="form.last_name"
+                    type="text"
+                    class="mt-1 block w-full"
+                    autocomplete="last_name"
+                />
+
+                <InputError :message="form.errors.last_name" class="mt-2" />
+            </div>
+
+            <div>
+                <InputLabel for="mobile" value="Mobile" />
+
+                <TextInput
+                    id="mobile"
+                    ref="mobileInput"
+                    v-model="form.mobile"
+                    type="text"
+                    class="mt-1 block w-full"
+                    autocomplete="mobile"
+                />
+
+                <InputError :message="form.errors.mobile" class="mt-2" />
+            </div>
+
+
+
+            
 
             <div class="col-span-6 sm:col-span-4">
 
