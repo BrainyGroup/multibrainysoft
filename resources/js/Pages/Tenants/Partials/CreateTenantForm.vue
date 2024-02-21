@@ -17,15 +17,15 @@ const props = defineProps({
 
 
 const form = useForm({
-    id: '',
-    email:'', 
-    company_name:'', 
+    id: 'data',
+    email:'yahaya.frezier@datahousetza.com', 
+    company_name:'datahouse', 
 
-    description: '',
-    mobile:'', 
+    description: 'datahouse description',
+    mobile:'0754307151', 
     database:'', 
-    first_name:'', 
-    last_name:'',  
+    first_name:'yahaya', 
+    last_name:'frezier',  
 });
 
 const createTenant = () => {

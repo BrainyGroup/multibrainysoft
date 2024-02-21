@@ -71,7 +71,9 @@ class TenantController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {    
+    {   
+        
+        // dd('test');
         
         // dd($request);
 
@@ -103,6 +105,8 @@ class TenantController extends Controller
         $tenant = Tenant::create(['id' => $id ]);
 
         $tenant->domains()->create(['domain' => $id . '.' . $app_domain]); 
+
+         
 
         $tenant_detail = TenantDetail::create([
             'tenant_id' => $id,
