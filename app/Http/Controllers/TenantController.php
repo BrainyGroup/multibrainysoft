@@ -104,9 +104,13 @@ class TenantController extends Controller
 
         $tenant = Tenant::create(['id' => $id ]);
 
+        // dd($tenant);
+
+       
+
         $tenant->domains()->create(['domain' => $id . '.' . $app_domain]); 
 
-         
+        
 
         $tenant_detail = TenantDetail::create([
             'tenant_id' => $id,
@@ -124,9 +128,9 @@ class TenantController extends Controller
         
 
 
-        \Artisan::call('tenants:migrate', [
-            '--tenants' => [$tenant['id']]
-        ]);
+        // \Artisan::call('tenants:migrate', [
+        //     '--tenants' => [$tenant['id']]
+        // ]);
 
         \Artisan::call('tenants:seed', [
             '--tenants' => [$tenant['id']]
