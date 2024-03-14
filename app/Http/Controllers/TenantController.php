@@ -90,7 +90,7 @@ class TenantController extends Controller
                // validate email address in ternants
           
 
-        $app_domain = env('APP_DOMAIN', 'brainysoft.co.tz');
+        $app_domain = env('APP_DOMAIN', 'brainysoft.online');
 
 
        $email = $request->input('email');

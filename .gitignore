@@ -5,6 +5,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/config/tenancy.php
 .env
 .env.backup
 .env.production

@@ -18,9 +18,9 @@ return [
      * Only relevant if you're using the domain or subdomain identification middleware.
      */
     'central_domains' => [
-        // '127.0.0.1',
-        // 'localhost',
-        'brainysoft.online',
+        '127.0.0.1',
+        'localhost',
+        // 'brainysoft.online',
     ],
 
     /**
@@ -53,7 +53,7 @@ return [
          * Tenant database names are created like this:
          * prefix + tenant_id + suffix.
          */
-        'prefix' => 'brainysoft_tenant',
+        'prefix' => 'tenant',
         'suffix' => '',
 
         /**
