@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-// use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
-use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+// use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
 // use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
 // use Stancl\Tenancy\Middleware\InitializeTenancyByPath;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
@@ -88,9 +88,9 @@ use Inertia\Inertia;
 
 Route::middleware([
     'web',
-    // InitializeTenancyByDomain::class,
+    InitializeTenancyByDomain::class,
     // InitializeTenancyByDomainOrSubdomain::class,
-    InitializeTenancyBySubdomain::class,
+    // InitializeTenancyBySubdomain::class,
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
     Route::get('/', function () {
